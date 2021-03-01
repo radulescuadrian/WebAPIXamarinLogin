@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Login.MainPage">
+             x:Class="Login.MainPage"
+             Title="Page 1">
 
     <StackLayout>
-        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+        <!--<Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
             <Label Text="Welcome to Xamarin.Forms!" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
         </Frame>
         <Label Text="Start developing now" FontSize="Title" Padding="30,10,30,10"/>
@@ -18,7 +19,9 @@
                     </FormattedString.Spans>
                 </FormattedString>
             </Label.FormattedText>
-        </Label>
+        </Label>-->
+        <Label x:Name="LabelMessage" FontSize="Medium"
+               HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>
+        <Button Text="Next" Clicked="Button_Clicked"/>
     </StackLayout>
-
 </ContentPage>
