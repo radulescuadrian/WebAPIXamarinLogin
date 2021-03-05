@@ -13,6 +13,7 @@ namespace Login.Services
     {
         public async Task LoginAsync(string username, string password)
         {
+            var URI = "https://192.168.1.116:44344/Token";
             var headers = new List<KeyValuePair<string, string>>
             {
                 new KeyValuePair<string, string>("username", username),
@@ -20,24 +21,15 @@ namespace Login.Services
                 new KeyValuePair<string, string>("grant_type", "password")
             };
 
-            var request = new HttpRequestMessage(HttpMethod.Post, "https://localhost:44344/Token")
-            {
-                Content = new FormUrlEncodedContent(headers)
-            };
+            var request = new HttpRequestMessage(HttpMethod.Post, URI);
+            request.Content = new FormUrlEncodedContent(headers);
 
             var client = new HttpClient();
-            try
-            {
-                var response = await client.SendAsync(request);
+            var response = await client.SendAsync(request);
 
-                var content = await response.Content.ReadAsStringAsync();
+            var content = await response.Content.ReadAsStringAsync();
 
-                Debug.WriteLine(content);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
+            Debug.WriteLine(content);
         }
     }
 }

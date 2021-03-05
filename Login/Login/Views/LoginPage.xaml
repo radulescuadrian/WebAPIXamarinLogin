@@ -13,7 +13,7 @@
             <Entry Text="{Binding Username}"/>
             <Entry Text="{Binding Password}"
                    IsPassword="True"/>
-            <Button Command="{Binding LoginCommand}"
+            <Button Clicked="Button_OnClicked"
                     Text="Login"/>
         </StackLayout>
     </ContentPage.Content>

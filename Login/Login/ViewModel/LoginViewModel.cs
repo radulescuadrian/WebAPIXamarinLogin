@@ -13,15 +13,9 @@ namespace Login.ViewModel
 
         public string Username { get; set; } = "test@test.com";
         public string Password { get; set; } = "Test?123";
-        public ICommand LoginCommand 
-        {
-            get
-            {
-                return new Command(async () =>
-                {
-                    await _apiServices.LoginAsync(Username, Password);
-                });
-            }
-        }
+        public ICommand LoginCommand => new Command(async () =>
+                                        {
+                                            await _apiServices.LoginAsync(Username, Password);
+                                        });
     }
 }

@@ -1,0 +1,16 @@
+﻿<Window x:Class="WPFTests.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFTests"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <TextBox Text="{Binding Path=Token, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                 IsReadOnly="True"/>
+        <Button Click="ButtonBase_OnClick">GetValues</Button>
+        <ListView ItemsSource="{Binding Path=Values, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                  Height="85"/>
+    </StackPanel>
+</Window>
